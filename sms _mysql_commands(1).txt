@@ -1,0 +1,30 @@
+
+
+create table admins(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+
+   password VARCHAR(40) NOT NULL,
+   PRIMARY KEY ( id )
+);
+
+create table courses(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    duration INT NOT NULL,
+    fee INT NOT NULL,
+   PRIMARY KEY ( id )
+);
+
+create table students(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+
+   password VARCHAR(40) NOT NULL,
+   dob DATE,
+   cid INT
+   PRIMARY KEY ( id )
+   FOREIGN KEY (cid) REFERENCES courses(id)
+);
